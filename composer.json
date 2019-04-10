@@ -43,7 +43,8 @@
             "app/helpers.php"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Noetic\\Plugins\\": "plugins/"
         },
         "classmap": [
             "database/seeds",

@@ -2,32 +2,25 @@
 
 namespace App\Providers;
 
-use App\Console\Commands\CreatePlugin;
-use App\Console\Commands\MakePluginController;
-use App\Console\Commands\MakePluginCRUD;
-use App\Console\Commands\MakePluginDatabase;
-use App\Console\Commands\MakePluginModel;
-use App\Console\Commands\MakePluginRequest;
-use Illuminate\Support\Facades\Event;
+use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Passport\Events\AccessTokenCreated;
 
 class NitsEditorServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      *
-     * @param ProviderRepository $providers
      * @return void
      */
-    public function boot(ProviderRepository $providers)
+    public function boot()
     {
         Schema::defaultStringLength(191);
 
 //        $this->app->register('Nitseditor\System\Providers\TaskSchedulerServiceProvider');
 
-        $this->createAccessTokenProvider($providers);
     }
 
     /**
@@ -37,20 +30,28 @@ class NitsEditorServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        foreach (nits_plugins() as $package) {
+            $namespace = nits_get_plugin_config($package.'.namespace');
+            if($namespace)
+            {
+                if(File::exists(base_path().'/plugins/'. $namespace .'/Databases/Migrations'))
+                    $this->loadMigrationsFrom(base_path().'/plugins/'. $namespace .'/Databases/Migrations');
 
-    }
+                if(File::exists(base_path().'/plugins/'. $namespace . '/Databases/Factories'))
+                {
+                    $this->app->singleton(Factory::class, function () use($namespace){
+                        $faker = $this->app->make(Faker::class);
+                        return Factory::construct($faker,base_path().'/plugins/'. $namespace . '/Databases/Factories');
+                    });
+                }
+            }
 
-    /**
-     * Create access token provider when access token is created.
-     *
-     * @param ProviderRepository $providers
-     * @return void
-     */
-    protected function createAccessTokenProvider(ProviderRepository $providers)
-    {
-        Event::listen(AccessTokenCreated::class, function ($event) use ($providers) {
-            $provider = config('auth.guards.api.provider');
-            $providers->create($event->tokenId, $provider);
+        }
+
+        $this->app->singleton('nitseditor', function ($app)
+        {
+            return new NitsEditor;
         });
+
     }
 }

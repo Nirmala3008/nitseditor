@@ -1,5 +1,15 @@
 const mix = require('laravel-mix');
 
+mix.webpackConfig({
+    node: {
+        fs: "empty"
+    },
+    output: {
+        publicPath: '/',
+        chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
+    },
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,5 +21,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/admin/admin.js', 'public/nits-assets/js/admin')
+   .sass('resources/sass/app.scss', 'public/nits-assets/css');

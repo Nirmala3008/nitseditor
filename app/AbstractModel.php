@@ -9,18 +9,7 @@ use Illuminate\Support\Facades\Crypt;
 class AbstractModel extends Model
 {
     use SoftDeletes;
-    /**
-     *  Defining connection for database
-     *
-     * @var string
-     **/
-    protected $connection='mysql';
 
-    /**
-     *  Defining connection for database
-     *
-     * @var array
-     **/
     protected $nits_encryption = [];
 
     protected $guarded = ['id'];
@@ -29,8 +18,7 @@ class AbstractModel extends Model
     {
         parent::boot();
 
-        $encrypt = config('nitseditor.app_env');
-        if($encrypt == 'prod')
+        if(env('APP_ENV') == 'prod')
         {
             // Decrypt the nits_encryption attributes.
             static::retrieved(function ($instance) {
