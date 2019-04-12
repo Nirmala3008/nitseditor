@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/{view?}', 'HomeController@admin')->where('view', '(.*)')->name('nitseditor');
+Route::get('/admin/{view?}', 'HomeController@admin')->where('view', '(.*)')->name('nitseditor.admin');

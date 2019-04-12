@@ -1,4 +1,5 @@
 /node_modules
+/packages
 /public/hot
 /public/nits-assets
 /public/storage
