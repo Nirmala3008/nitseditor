@@ -18,7 +18,8 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/passport": "^7.2",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "nitseditor/framework": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -28,6 +29,18 @@
         "nunomaduro/collision": "^2.0",
         "phpunit/phpunit": "^7.5"
     },
+    "repositories": [ {
+        "type": "package",
+        "package": {
+            "name": "nitseditor/framework",
+            "version": "dev-master",
+            "source": {
+                "url": "ssh://git@35.155.242.12:7999/nit/framework.git",
+                "type": "git",
+                "reference": "master"
+            }
+        }
+    }],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
