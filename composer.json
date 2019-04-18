@@ -25,23 +25,10 @@
         "nunomaduro/collision": "^2.0",
         "phpunit/phpunit": "^7.5"
     },
-    "repositories": [ {
-        "type": "package",
-        "package": {
-            "name": "nitseditor/framework",
-            "version": "dev-master",
-            "source": {
-                "url": "http://35.155.242.12:7990/scm/nit/framework.git",
-                "type": "git",
-                "reference": "master"
-            }
-        }
-    }],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "secure-http": false
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
