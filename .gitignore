@@ -3,8 +3,8 @@
 /packages
 /public/hot
 /plugins
-/public/chunks
-/public/js/admin
+/public/nits-assets/chunks
+/public/nits-assets/js/admin
 /public/storage
 /storage/*.key
 /vendor
