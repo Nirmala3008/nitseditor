@@ -21,5 +21,4 @@ mix.webpackConfig({
  |
  */
 
-mix.js('vendor/nitseditor/framework/src/Frontend/Admin/admin.js', 'public/nits-assets/js/admin')
-    .sass('vendor/nitseditor/framework/src/Frontend/Admin/theme/sass/style.scss', 'public/nits-assets/css/admin');
+mix.js('vendor/nitseditor/framework/src/Frontend/Admin/admin.js', 'public/nits-assets/js/admin');

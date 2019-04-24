@@ -13,7 +13,7 @@ return [
     'salt_key' => '',
 
     /*
-     * Enviornment: Production or development cycle configuration
+     * Environment: Production or development cycle configuration
      * 'dev' => development, 'prod' => production
      * Encryption doesn't work on development mode
      */
