@@ -2,7 +2,7 @@
 /node_modules
 /packages
 /public/hot
-/public/nits-assets
+/plugins
 /public/storage
 /storage/*.key
 /vendor
