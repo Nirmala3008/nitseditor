@@ -33,6 +33,11 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "merge-plugin": {
+            "require": [
+                "plugins/*/composer.json"
+            ]
         }
     },
     "autoload": {
