@@ -10,7 +10,8 @@ mix.webpackConfig({
     },
     resolve: {
         modules: [
-            path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/theme/demo/demo4/sass')
+            'node_modules',
+            // path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/theme/demo/demo4/sass')
         ]
     }
 });
