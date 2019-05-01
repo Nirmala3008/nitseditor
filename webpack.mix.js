@@ -8,6 +8,11 @@ mix.webpackConfig({
         publicPath: '/',
         chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
     },
+    resolve: {
+        modules: [
+            path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/theme/demo/demo4/sass')
+        ]
+    }
 });
 
 /*
