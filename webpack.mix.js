@@ -11,8 +11,11 @@ mix.webpackConfig({
     resolve: {
         modules: [
             'node_modules',
-            // path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/theme/demo/demo4/sass')
-        ]
+            path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend')
+        ],
+        alias: {
+            NitsModels: path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/models')
+        }
     }
 });
 
