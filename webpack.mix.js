@@ -14,7 +14,8 @@ mix.webpackConfig({
             path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend')
         ],
         alias: {
-            NitsModels: path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/models')
+            NitsModels: path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/models'),
+            NitsTheme: path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/theme')
         }
     }
 });
