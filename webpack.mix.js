@@ -1,4 +1,10 @@
 const mix = require('laravel-mix');
+require('laravel-mix-alias');
+
+mix.alias({
+    'NitsModels': 'vendor/nitseditor/framework/src/Frontend/Admin/models',
+    'NitsTheme': 'vendor/nitseditor/framework/src/Frontend/Admin/theme',
+});
 
 mix.webpackConfig({
     node: {
@@ -7,16 +13,6 @@ mix.webpackConfig({
     output: {
         publicPath: '/',
         chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
-    },
-    resolve: {
-        modules: [
-            'node_modules',
-            path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend')
-        ],
-        alias: {
-            NitsModels: path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/models'),
-            NitsTheme: path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/theme')
-        }
     }
 });
 
