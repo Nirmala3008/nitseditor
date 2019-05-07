@@ -3,8 +3,9 @@
 /packages
 /public/hot
 public/fonts
+public/mix-manifest.json
 /plugins
-/public//mix-manifest.json
+/public/mix-manifest.json
 /public/nits-assets/chunks
 /public/nits-assets/js/admin
 /public/storage
