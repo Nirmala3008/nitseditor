@@ -30,6 +30,7 @@
         "bootstrap-select": "^1.13.10",
         "crypto": "^1.0.1",
         "dropzone": "^5.5.1",
+        "jquery.repeater": "^1.2.1",
         "laravel-mix-alias": "^1.0.1",
         "moment": "^2.24.0",
         "select2": "^4.0.7-rc.0",
