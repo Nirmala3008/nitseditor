@@ -8,6 +8,12 @@ mix.webpackConfig({
         publicPath: '/',
         chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
     },
+    resolve: {
+        modules: [
+            'node_modules',
+            // path.resolve(__dirname, 'vendor/nitseditor/framework/src/Frontend/Admin/theme/demo/demo4/sass')
+        ]
+    }
 });
 
 /*
@@ -22,4 +28,5 @@ mix.webpackConfig({
  */
 
 mix.js('vendor/nitseditor/framework/src/Frontend/Admin/admin.js', 'public/nits-assets/js/admin')
-    .sass('vendor/nitseditor/framework/src/Frontend/Admin/theme/sass/style.scss', 'public/nits-assets/css/admin');
+    .sourceMaps()
+    .version();
