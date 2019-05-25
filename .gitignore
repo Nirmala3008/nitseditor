@@ -2,9 +2,9 @@
 /node_modules
 /packages
 /public/hot
-public/fonts
+/public/fonts
 /plugins
-/public//mix-manifest.json
+/public/mix-manifest.json
 /public/nits-assets/chunks
 /public/nits-assets/js/admin
 /public/storage
