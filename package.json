@@ -10,7 +10,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.18",
+        "axios": "^0.19",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "jquery": "^3.4.1",
@@ -24,7 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "@amcharts/amcharts4": "^4.4.8",
+        "@amcharts/amcharts4": "^4.4.10",
         "@amcharts/amcharts4-geodata": "^4.1.5",
         "@ckeditor/ckeditor5-basic-styles": "^11.1.0",
         "@ckeditor/ckeditor5-build-classic": "^12.1.0",
@@ -43,6 +43,7 @@
         "bootstrap-select": "^1.13.10",
         "crypto": "^1.0.1",
         "dropzone": "^5.5.1",
+        "jquery-ui": "^1.12.1",
         "laravel-mix-alias": "^1.0.1",
         "moment": "^2.24.0",
         "perfect-scrollbar": "^1.4.0",
@@ -50,9 +51,9 @@
         "raw-loader": "^0.5.1",
         "select2": "^4.0.7",
         "sweetalert": "^2.1.2",
-        "sweetalert2": "^8.11.3",
+        "sweetalert2": "^8.11.6",
         "vue-multiselect": "^2.1.6",
         "vue-router": "^3.0.6",
-        "vuex": "^3.1.0"
+        "vuex": "^3.1.1"
     }
 }
