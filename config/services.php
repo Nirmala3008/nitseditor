@@ -44,4 +44,13 @@ return [
         ],
     ],
 
+    'paytm-wallet' => [
+        'env' => 'local', // values : (local | production)
+        'merchant_id' => 'WAQIQR64228006666301',
+        'merchant_key' => 'CnL#bxQ2KN@vv@jD',
+        'merchant_website' => 'WEBSTAGING',
+        'channel' => 'WAP',
+        'industry_type' => 'Retail',
+    ],
+
 ];
