@@ -165,9 +165,9 @@ return [
         /*
          * Package Service Providers...
          */
-        Barryvdh\DomPDF\ServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
-        Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
+//        Barryvdh\DomPDF\ServiceProvider::class,
+//        Maatwebsite\Excel\ExcelServiceProvider::class,
+//        Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
 
         /*
          * Application Service Providers...
