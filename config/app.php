@@ -163,13 +163,6 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-//        Barryvdh\DomPDF\ServiceProvider::class,
-//        Maatwebsite\Excel\ExcelServiceProvider::class,
-//        Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
-
-        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
