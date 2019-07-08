@@ -1,4 +1,8 @@
 
+<p align="center">
+    [![Total Downloads](https://poser.pugx.org/noetic/nitseditor/downloads)](https://packagist.org/packages/noetic/nitseditor)
+</p>
+
 # NitsEditor
 
 Project built on Laravel.
