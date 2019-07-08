@@ -1,9 +1,11 @@
-
-<p align="center">
-    [![Total Downloads](https://poser.pugx.org/noetic/nitseditor/downloads)](https://packagist.org/packages/noetic/nitseditor)
-</p>
-
 # NitsEditor
+
+[![Latest Stable Version](https://poser.pugx.org/noetic/nitseditor/v/stable?format=plastic)](https://packagist.org/packages/noetic/nitseditor)
+[![Total Downloads](https://poser.pugx.org/noetic/nitseditor/downloads?format=plastic)](https://packagist.org/packages/noetic/nitseditor)
+[![License](https://poser.pugx.org/noetic/nitseditor/license?format=plastic)](https://packagist.org/packages/noetic/nitseditor)
+[![composer.lock](https://poser.pugx.org/noetic/nitseditor/composerlock?format=plastic)](https://packagist.org/packages/noetic/nitseditor)
+
+
 
 Project built on Laravel.
 
