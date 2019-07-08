@@ -1,9 +1,9 @@
 
-## NitsEditor
+# NitsEditor
 
 Project built on Laravel.
 
-#Installation
+## Installation
 
 Please visit Laravel page for pre-requisites, install via composer
 
