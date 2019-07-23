@@ -70,21 +70,5 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
-
-        //Plugin route loader
-        foreach (nits_plugins() as $package){
-            $namespace = nits_get_plugin_config($package.'.namespace');
-
-            if($namespace)
-            {
-                if(File::exists(base_path('/plugins/'). $namespace .'/Routes/api.php', $namespace))
-                {
-                    Route::prefix('nits-plugins-api/'.nits_get_plugin_config($package.'name') )
-                        ->middleware('api')
-                        ->namespace('Noetic\Plugins\\'. $namespace .'\Controllers')
-                        ->group(base_path('plugins/') . $namespace . '/Routes/api.php');
-                }
-            }
-        }
     }
 }
