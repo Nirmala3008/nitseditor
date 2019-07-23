@@ -169,6 +169,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
         Nitseditor\Framework\ServiceProviders\FrameworkServiceProvider::class,
         Nitseditor\Framework\ServiceProviders\RouteServiceProvider::class,
     ],

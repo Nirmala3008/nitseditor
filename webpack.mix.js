@@ -2,8 +2,11 @@ const mix = require('laravel-mix');
 require('laravel-mix-alias');
 
 mix.alias({
+    'ProjectComponents': 'resources',
     'NitsModels': 'vendor/nitseditor/framework/src/Frontend/Admin/models',
     'NitsTheme': 'vendor/nitseditor/framework/src/Frontend/Admin/theme',
+    'NitsComponents': 'vendor/nitseditor/framework/src/Frontend/Admin/components',
+    'NitsAdmin': 'vendor/nitseditor/framework/src/Frontend/Admin',
 });
 
 mix.webpackConfig({
