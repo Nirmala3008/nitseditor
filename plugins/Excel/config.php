@@ -3,10 +3,10 @@
 return [
 
     // Name of Plugin
-    'name' => 'Confidence',
+    'name' => 'Excel',
 
     //Namespace to be used as classes/plugin folder name
-    'namespace' => 'Confidence',
+    'namespace' => 'Excel',
 
     //Description of plugin
     'description' => '',

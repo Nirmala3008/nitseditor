@@ -1,12 +1,16 @@
+import {encrypt} from "NitsModels/_encrypt";
+import {getHeader} from "NitsModels/_config";
+import store from "NitsModels/../store/_store";
+
 export const menu = function (currentNav) {
     var menu_type = _.find(JSON.parse(nitseditor).all_menu, (o) => {
         return o.link === currentNav;
     })
     var user = JSON.parse(window.localStorage.getItem('authUser'));
-    if(user.role_id === 2)
+    if(user.role === encrypt('Super admin') || user.role === encrypt('God'))
         var main_menu = _.filter(JSON.parse(nitseditor).menu, function(o) { return o.menu_location === 'main_menu'; })
-    else if(user.role_id = 3)
-        var main_menu = _.filter(JSON.parse(nitseditor).menu, function(o) { return o.menu_location === 'analyst_menu'; })
+    else if(user.role === encrypt('Subscriber'))
+        var main_menu = _.filter(JSON.parse(nitseditor).menu, function(o) { return o.menu_location === 'subscriber_menu'; })
 
     var menu = main_menu.map(a => ({
         name: a.name,
@@ -26,10 +30,6 @@ export const menu = function (currentNav) {
 
     return menu;
 }
-
-import {encrypt} from "NitsModels/_encrypt";
-import {getHeader} from "NitsModels/_config";
-import store from "NitsModels/../store/_store";
 
 export const login = function(user) {
     return new Promise((resolve, reject) => {
