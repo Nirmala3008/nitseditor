@@ -39,6 +39,5 @@ mix.webpackConfig({
 mix.js('vendor/nitseditor/framework/src/Frontend/Admin/layout-one.js', 'public/nits-assets/js/admin')
     .js('vendor/nitseditor/framework/src/Frontend/Admin/layout-two.js', 'public/nits-assets/js/admin')
     .js('vendor/nitseditor/framework/src/Frontend/Admin/layout-three.js', 'public/nits-assets/js/admin')
-    .js('plugins/Biltrax/Frontend/views/Website/web.js', 'public/nits-assets/js/website')
     .sourceMaps()
     .version();
