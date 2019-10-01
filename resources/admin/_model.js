@@ -2,10 +2,11 @@ export const menu = function (currentNav) {
     var menu_type = _.find(JSON.parse(nitseditor).all_menu, (o) => {
         return o.link === currentNav;
     })
-    if(menu_type.menu_location === 'main_menu')
+    var user = JSON.parse(window.localStorage.getItem('authUser'));
+    if(user.role_id === 2)
         var main_menu = _.filter(JSON.parse(nitseditor).menu, function(o) { return o.menu_location === 'main_menu'; })
-    else if(menu_type.menu_location === 'analytics_menu')
-        var main_menu = _.filter(JSON.parse(nitseditor).menu, function(o) { return o.menu_location === 'analytics_menu'; })
+    else if(user.role_id = 3)
+        var main_menu = _.filter(JSON.parse(nitseditor).menu, function(o) { return o.menu_location === 'analyst_menu'; })
 
     var menu = main_menu.map(a => ({
         name: a.name,
@@ -23,32 +24,70 @@ export const menu = function (currentNav) {
         })) : []
     }))
 
-    if(menu_type.menu_location === 'main_menu')
-        menu.push({name: 'Biltrax Analytics', link: '/dashboard-biltrax-analytics', icon: 'flaticon2-protection'})
-    else if(menu_type.menu_location === 'analytics_menu')
-        menu.push({name: 'Search Data', link: '/dashboard', icon: 'flaticon2-protection'})
-
     return menu;
 }
 
-import authorization from "NitsModels/_auth";
-
-const auth = new authorization();
+import {encrypt} from "NitsModels/_encrypt";
+import {getHeader} from "NitsModels/_config";
+import store from "NitsModels/../store/_store";
 
 export const login = function(user) {
     return new Promise((resolve, reject) => {
 
-        const cred = {
-            email: user.email,
-            password: user.password
+        const authUser = {}
+
+        const postData = {
+            grant_type: 'password',
+            username: user.email,
+            password: user.password,
+            client_id: process.env.MIX_CLIENT_ID,
+            client_secret: process.env.MIX_CLIENT_SECRET,
+            scope: ''
         }
 
-        new auth.login(cred).then(response => {
-            const redirect = {
-                redirect: '/dashboard'
+        axios.post('/oauth/token', postData).then(response => {
+            if (response.status === 200) {
+                authUser.access_token = encrypt(response.data.access_token);
+                authUser.refesh_token = encrypt(response.data.refresh_token);
+                window.localStorage.setItem('authUser', JSON.stringify(authUser));
+
+                axios.get('/nits-system-api/user', {headers: getHeader()}).then(response => {
+                    if(response.status === 200)
+                    {
+                        authUser.first_name = encrypt(response.data.data.first_name)
+                        authUser.last_name = encrypt(response.data.data.last_name)
+                        authUser.email = encrypt(response.data.data.email)
+                        authUser.role = encrypt(response.data.data.role)
+
+                        // //Storing permissions into localstorage
+                        // ability.update(response.data.data.permissions)
+
+                        //Storing into local storage.
+                        window.localStorage.setItem('authUser', JSON.stringify(authUser));
+                        //Storing to state.
+                        store.commit("STORE_USER_DATA", authUser);
+
+                        const redirect = {
+                            redirect: '/dashboard'
+                        }
+                        resolve(redirect);
+                    }
+                }).catch((err) => {
+                    if(err.response.status === 401){
+                        const error = err.response.data.message
+                        reject(error)
+                    }
+                    if(err.response.status === 500) {
+                        const error = 'Server error, please try after sometime.'
+                        reject(error)
+                    }
+                    if(err.response.status === 400) {
+                        const error = 'Environment variable missing. Check and retry.'
+                        reject(error)
+                    }
+                })
             }
-            resolve(redirect);
-        }).catch( err => {
+        }).catch((err) => {
             if(err.response.status === 401){
                 const error = err.response.data.message
                 reject(error)
@@ -61,9 +100,8 @@ export const login = function(user) {
                 const error = 'Environment variable missing. Check and retry.'
                 reject(error)
             }
-        });
+        })
 
     })
-
 
 }

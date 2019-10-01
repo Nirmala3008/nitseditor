@@ -1,8 +1,9 @@
 {
-    "/nits-assets/js/admin/layout-one.js": "/nits-assets/js/admin/layout-one.js?id=98b2fbaefec450aa0ed5",
-    "/nits-assets/js/admin/layout-two.js": "/nits-assets/js/admin/layout-two.js?id=2cc7d465b90bf91729a3",
-    "/nits-assets/chunks/vendors~canvg.d8eaf6219b7d69c003cc.js": "/nits-assets/chunks/vendors~canvg.d8eaf6219b7d69c003cc.js?id=79362e5c4a129499164a",
-    "/nits-assets/chunks/vendors~pdfmake.b563bc9b9f6748e8c36e.js": "/nits-assets/chunks/vendors~pdfmake.b563bc9b9f6748e8c36e.js?id=45371abe445928cdeec3",
-    "/nits-assets/chunks/vendors~xlsx.5c5adbbb91246c94886f.js": "/nits-assets/chunks/vendors~xlsx.5c5adbbb91246c94886f.js?id=262278c708899a288204",
-    "/nits-assets/chunks/xlsx.defeb00200d96720d228.js": "/nits-assets/chunks/xlsx.defeb00200d96720d228.js?id=a4ec36820845b5bd3edc"
+    "/nits-assets/js/admin/layout-one.js": "/nits-assets/js/admin/layout-one.js?id=772269ce8795f5fd61b9",
+    "/nits-assets/js/admin/layout-three.js": "/nits-assets/js/admin/layout-three.js?id=e775fd883c04d36d2185",
+    "/nits-assets/js/admin/layout-two.js": "/nits-assets/js/admin/layout-two.js?id=a9aa40d28986c25b856a",
+    "/nits-assets/chunks/vendors~canvg.992ce339b2845ad22d12.js": "/nits-assets/chunks/vendors~canvg.992ce339b2845ad22d12.js?id=8d3965f7e09440225c50",
+    "/nits-assets/chunks/vendors~pdfmake.4340d8aed631e442e6f8.js": "/nits-assets/chunks/vendors~pdfmake.4340d8aed631e442e6f8.js?id=6b3575c82b7222e08965",
+    "/nits-assets/chunks/vendors~xlsx.eb7990ba64991718bd58.js": "/nits-assets/chunks/vendors~xlsx.eb7990ba64991718bd58.js?id=8f5a158cf1926ba03fb4",
+    "/nits-assets/chunks/xlsx.5453682e79f54055484d.js": "/nits-assets/chunks/xlsx.5453682e79f54055484d.js?id=1b30b3aaeb2327df1c68"
 }
