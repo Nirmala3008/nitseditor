@@ -1,13 +1,8 @@
 <template>
     <div>
         <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
-            <div class="row" style="margin-left: 500px; margin-top: 20px">
-               <h5>Welcome to Stellar Investor Relations</h5>
-                <ul style="width: 55%; margin-left: 300px; margin-top: -25px">
-                    <li> <router-link to="/plugins/Stellar/clients"> Clients </router-link></li>
-                    <li> <router-link to="/plugins/Stellar/contacts"> Contacts </router-link></li>
-                    <li> <router-link to="/plugins/Stellar/companies"> Companies </router-link></li>
-                </ul>
+            <div class="row" style="margin-left: 50px; margin-top: 20px">
+               <h5>Welcome to Noetic IT Services Pvt. Ltd.</h5>
             </div>
         </div>
     </div>
