@@ -38,8 +38,8 @@
 
                         <!--Begin::Dashboard 4-->
 
-                       <superadmin-dashboard v-if="role_id === 2"></superadmin-dashboard>
-                       <admin-dashboard v-else-if="role_id === 3"></admin-dashboard>
+                       <super-admin-dashboard v-if="role === 'Super admin'"></super-admin-dashboard>
+                       <admin-dashboard v-else-if="role === 'Subscriber'"></admin-dashboard>
 
                         <!--End::Dashboard 4-->
                     </div>
@@ -52,22 +52,28 @@
 </template>
 
 <script>
-    import SuperadminDashboard from './SuperadminDashboard'
+    import SuperAdminDashboard from './SuperadminDashboard'
     import AdminDashboard from './AdminDashboard'
+    import {encrypt, decrypt} from "NitsModels/_encrypt";
+
+
     export default {
         name: "dashboard",
         data() {
             return {
-                role_id: ''
+                role: ''
             }
         },
         components: {
-            SuperadminDashboard, AdminDashboard
+            SuperAdminDashboard, AdminDashboard
+        },
+        beforeCreate() {
+            console.log('Coming to dashboard page')
         },
         created() {
-            const authUser = JSON.parse(window.localStorage.getItem('authUser'))
-            this.role_id = authUser.role_id
-        }
+            const authUser = this.$session.get('authUser');
+            this.role = decrypt(authUser.role)
+        },
     }
 </script>
 

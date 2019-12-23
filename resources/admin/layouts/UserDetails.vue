@@ -12,7 +12,7 @@
                 Super Admin
             </div>
             <div class="kt-user-card__badge">
-<!--                <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>-->
+                <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
             </div>
         </div>
 
@@ -20,7 +20,7 @@
 
         <!--begin: Navigation -->
         <div class="kt-notification">
-            <a href="#" class="kt-notification__item" @click.prevent="redirect('profile')">
+            <a href="#" class="kt-notification__item">
                 <div class="kt-notification__item-icon">
                     <i class="flaticon2-calendar-3 kt-font-success"></i>
                 </div>
@@ -33,7 +33,20 @@
                     </div>
                 </div>
             </a>
-            <a href="#" class="kt-notification__item"  @click.prevent="redirect('activity')">
+            <a href="#" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-mail kt-font-warning"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title kt-font-bold">
+                        My Messages
+                    </div>
+                    <div class="kt-notification__item-time">
+                        Inbox and tasks
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="kt-notification__item">
                 <div class="kt-notification__item-icon">
                     <i class="flaticon2-rocket-1 kt-font-danger"></i>
                 </div>
@@ -46,7 +59,7 @@
                     </div>
                 </div>
             </a>
-            <router-link to="/plugins/Stellar/tasks" class="kt-notification__item">
+            <a href="#" class="kt-notification__item">
                 <div class="kt-notification__item-icon">
                     <i class="flaticon2-hourglass kt-font-brand"></i>
                 </div>
@@ -58,7 +71,7 @@
                         latest tasks and projects
                     </div>
                 </div>
-            </router-link>
+            </a>
             <div class="kt-notification__custom">
                 <a class="btn btn-label-brand btn-sm btn-bold" @click.prevent="logout">Sign Out</a>
             </div>
@@ -81,15 +94,6 @@
             logout() {
                 this.$auth.logout()
                 this.$router.push('/');
-            },
-            redirect(item){
-                if(item === 'profile'){
-                    this.$router.push({ name: 'Stellar__profile'})
-                }
-                if(item === 'activity'){
-                    this.$router.push({ name: 'Stellar__activities'})
-                }
-
             }
         },
         computed: {
